@@ -20,4 +20,26 @@ function adicionarAmigo() {
     
     // Limpar a caixa de texto
     caixaDeTexto.value = '';
+
+    // Chamar função para mostrar na tela
+    mostrarNaTela();
+}
+
+// Função para mostrar os amigos na tela
+function mostrarNaTela() {
+    // Pegar a lista do HTML
+    let lista = document.getElementById('listaAmigos');
+    
+    // Limpar a lista
+    lista.innerHTML = '';
+    
+    // Colocar cada amigo na lista
+    for (let i = 0; i < amigos.length; i++) {
+        // Criar novo item da lista
+        let novoAmigo = document.createElement('li');
+        // Colocar o nome do amigo no item
+        novoAmigo.textContent = amigos[i];
+        // Adicionar o item na lista
+        lista.appendChild(novoAmigo);
+    }
 }
