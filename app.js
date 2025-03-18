@@ -43,3 +43,26 @@ function mostrarNaTela() {
         lista.appendChild(novoAmigo);
     }
 }
+
+// Função para sortear um amigo
+function sortearAmigo() {
+    // Verificar se tem amigos suficientes
+    if (amigos.length < 2) {
+        alert('Preciso de pelo menos 2 amigos para sortear!');
+        return;
+    }
+    
+    // Escolher um número aleatório
+    let numero = Math.floor(Math.random() * amigos.length);
+    
+    // Pegar o amigo sorteado
+    let amigoSorteado = amigos[numero];
+    
+    // Mostrar o resultado
+    let lugarDoResultado = document.getElementById('resultado');
+    lugarDoResultado.innerHTML = '';
+    
+    let textoResultado = document.createElement('li');
+    textoResultado.textContent = 'O amigo sorteado é: ' + amigoSorteado;
+    lugarDoResultado.appendChild(textoResultado);
+}
